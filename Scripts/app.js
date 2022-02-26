@@ -62,7 +62,7 @@
     AjaxRequest("GET", "header.html", LoadHeader);
 
     $("#AboutUsButton").on("click", function () {
-      location.href = "/about";
+      location.href = "/#/about";
     });
 
     $("main").append(
@@ -163,7 +163,7 @@
       contactList.innerHTML = data;
 
       $("#addButton").on("click", () => {
-        location.href = "/edit#add";
+        location.href = "/#/edit#add";
       });
 
       $("button.delete").on("click", function () {
@@ -171,11 +171,11 @@
           localStorage.removeItem($(this).val());
         }
 
-        location.href = "/contact-list";
+        location.href = "/#/contact-list";
       });
 
       $("button.edit").on("click", function () {
-        location.href = "/edit#" + $(this).val();
+        location.href = "/#/edit#" + $(this).val();
       });
     }
   }
@@ -199,11 +199,11 @@
             // Add Contactt
             AddContact(fullName.value, contactNumber.value, emailAddress.value);
             // Refresh the contact-list page
-            location.href = "/contact-list";
+            location.href = "/#/contact-list";
           });
 
           $("#cancelButton").on("click", () => {
-            location.href = "/contact-list";
+            location.href = "/#/contact-list";
           });
         }
         break;
@@ -231,11 +231,11 @@
             localStorage.setItem(page, contact.serialize());
 
             // return to the contact-list
-            location.href = "/contact-list";
+            location.href = "/#/contact-list";
           });
 
           $("#cancelButton").on("click", () => {
-            location.href = "/contact-list";
+            location.href = "/#/contact-list";
           });
         }
         break;
@@ -320,7 +320,7 @@
           //hide any errors
           $("#messageArea").removeAttr("class").hide();
 
-          location.href = "/contact-list";
+          location.href = "/#/contact-list";
         } else {
           // display an error message
           $("#username").trigger("focus").trigger("select");
@@ -333,7 +333,7 @@
         $("#cancelButton").on("click", () => {
           // clear the login form
           document.forms[0].reset();
-          location.href = "/home";
+          location.href = "/#/home";
         });
       });
     });
@@ -350,7 +350,7 @@
 
       $("#logout").on("click", ()=>{
         sessionStorage.clear();     // clear the session storage
-        location.href = "/home"; //redirect back to index page
+        location.href = "/#/home"; //redirect back to index page
       })
       return true;
     }

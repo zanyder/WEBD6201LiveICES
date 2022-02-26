@@ -6,7 +6,6 @@
 
         /**
          *
-         *
          * @returns {string}
          */
         get ActiveLink()
@@ -16,22 +15,28 @@
 
         /**
          *
-         *
          * @param {string} link
          */
         set ActiveLink(link)
         {
             this.m_activeLink = link;
         }
-        //constructors
+
+        // constructor
+
+        /**
+         * Creates an instance of Router.
+         * @constructor
+         */
         constructor()
         {
             this.ActiveLink = "";
         }
-        //public methods
+
+        // public methods
 
         /**
-         *This method Adds a new Route to the routing Table
+         * This method Adds a new Route to the Routing Table
          *
          * @param {string} route
          * @returns {void}
@@ -42,8 +47,8 @@
         }
 
         /**
-         * This replaces the current Routing Table object
-         * (if it exists) with a reference to a new one
+         * This replaces the current Routing Table object (if it exists) with a reference to a new 
+         * string array of routes
          * Routes should begin with the '/' character
          *
          * @param {string[]} routingTable
@@ -55,7 +60,7 @@
         }
 
         /**
-         * This method finds the index of the route in the routing
+         * This method finds the index of the route in the routing table
          * otherwise, it returns -1 if the route is not found
          *
          * @param {string} route
@@ -68,10 +73,10 @@
 
         /**
          * This method removes a route from the Routing Table
-         * It returns true if the route was successfully removed
+         * It returns true if the route was successfully removed,
          * otherwise, it returns false
          *
-         * @param {strig} route
+         * @param {string} route
          * @returns {boolean}
          */
         Remove(route)
@@ -85,11 +90,9 @@
             return false;
         }
 
-        //public override functions
-
+        // public override functions
         /**
-         * This method returns the routing table as a comma-seperated
-         * string
+         * This method returns the routing table as a comma-separated string
          *
          * @returns {string}
          */
@@ -98,11 +101,12 @@
             return this.m_routingTable.toString();
         }
     }
+
     core.Router = Router;
-})(core || (core ={}))
+
+})(core || (core = {}));
 
 let router = new core.Router();
-
 router.AddTable([
     "/",
     "/home",
@@ -110,10 +114,10 @@ router.AddTable([
     "/services",
     "/contact",
     "/contact-list",
+    "/products",
     "/login",
     "/register",
-    "/edit",
-    "/projects"
+    "/edit"
 ]);
 
 let route = location.pathname; // alias for location.pathname
