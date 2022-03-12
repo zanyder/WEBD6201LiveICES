@@ -1,2 +1,2 @@
-"use script";
-let core;
+"use strict";
+//# sourceMappingURL=namespace.js.map
